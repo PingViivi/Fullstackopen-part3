@@ -1,8 +1,18 @@
 const http = require('http')
 const express = require('express')
+var morgan = require('morgan')
+
 const app = express()
 
+app.use(morgan('tiny'))
+
 app.use(express.json())
+
+morgan.token('host', function(req, res) {
+    console.log(res)
+    return req.hostname;
+});
+app.use(morgan(':method :host :status :res[content-length] - :response-time ms'))
 
 let persons = [
     {
@@ -71,7 +81,7 @@ const randomID = () => {
     const id = Math.floor(Math.random() * 10000)
     return id
 }; 
-  
+
 app.post('/api/persons', (request, response) => {
     const body = request.body
 
