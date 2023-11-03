@@ -1,5 +1,5 @@
 Backend can be found here:
-https://phonebookapp-82qu.onrender.com/api/persons
+https://phonebookapp-82qu.onrender.com/
 
 Start app by running:
 ### `npm run dev`
