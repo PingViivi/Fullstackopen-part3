@@ -1,9 +1,10 @@
 const http = require('http')
 const express = require('express')
-var morgan = require('morgan')
+const morgan = require('morgan')
 const cors = require('cors')
 const app = express()
 
+app.use(express.static('build'))
 app.use(morgan('tiny'))
 app.use(express.json())
 app.use(cors())
@@ -39,13 +40,10 @@ let persons = [
     } 
 ]
 
-app.get('/', (request, response) => {
-    response.send('<h1>Hello World!</h1>')
-})
-
 const now = new Date(); 
+const amount = persons.length
 app.get('/info', (request, response) => {
-    response.send('<p> Phonebook has info for 2 people </p>' + '<p>' + now + '</p>')
+    response.send('<p> Phonebook has info for ' + amount + ' people </p>' + '<p>' + now + '</p>')
 })
 
 app.get('/api/persons', (request, response) => {
