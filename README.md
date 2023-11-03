@@ -1,8 +1,8 @@
 Backend can be found here:
 https://phonebookapp-82qu.onrender.com/api/persons
 
-Start backend side by running in the backend folder:
+Start app by running:
 ### `npm run dev`
 
-Build backend by running in the backend folder:
+Build app by running:
 ### `npm run start`
