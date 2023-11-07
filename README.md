@@ -1,4 +1,4 @@
-Backend can be found here:
+Application can be found here:
 https://phonebookapp-82qu.onrender.com/
 
 Start app by running:
